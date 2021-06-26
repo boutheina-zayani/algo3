@@ -1,0 +1,64 @@
+///////////////////////////////////////// with PROCEDURE
+PROCEDURE Dot_Product(v1,v2,ps)
+BEGIN
+  FOR i FROM 0 TO v1.length STEP step  DO
+      FOR i FROM 0 TO v2.length STEP step  DO
+          ps:=ps+v1[i]*v2[i]
+      END_FOR
+  END_FOR 
+END 
+
+
+ALGORITHM Dot Product
+VAR
+   v1:= v1 : ARRAY_OF FLOAT[];
+   v2:= v2 : ARRAY_OF FLOAT[];
+   ps:FLOAT:=0;
+   i,n:INTEGER;
+BEGIN
+    FOR i FROM 0 TO n-1 STEP step  DO
+        read(v1[i])
+    END_FOR
+   
+   FOR i FROM 0 TO n-1 STEP step  DO
+        read(v2[i])
+    END_FOR
+
+    if(Dot_Product(v1,v2,ps)===0){
+    return "les deux vecteurs sont orthogonales"
+    }  
+
+END
+///////////////////////////////////////// with function
+function Dot_Product(v1,v2):float
+BEGIN
+  FOR i FROM 0 TO v1.length STEP step  DO
+      FOR i FROM 0 TO v2.length STEP step  DO
+          ps:=ps+v1[i]*v2[i]
+      END_FOR
+  END_FOR 
+  return ps
+END 
+
+
+ALGORITHM Dot Product
+VAR
+   v1:= v1 : ARRAY_OF FLOAT[];
+   v2:= v2 : ARRAY_OF FLOAT[];
+   ps:FLOAT:=0;
+   diagonal:float =f(v1,v2,ps);
+   i,n:INTEGER;
+
+BEGIN
+    FOR i FROM 0 TO n-1 STEP step  DO
+        read(v1[i])
+    END_FOR
+   
+   FOR i FROM 0 TO n-1 STEP step  DO
+        read(v2[i])
+    END_FOR
+    if(diagonal===0){
+    return "les deux vecteurs sont orthogonales"
+    }  
+
+END
